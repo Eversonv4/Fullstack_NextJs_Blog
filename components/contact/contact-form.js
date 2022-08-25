@@ -103,7 +103,7 @@ export default function ContactForm() {
           </div>
         </div>
         <div className={styles.control}>
-          <label htmlFor="message">Your name</label>
+          <label htmlFor="message">Your message</label>
           <textarea
             id="message"
             rows="5"
