@@ -4,19 +4,18 @@ import PostContent from "../../components/posts/post-detail/post-content";
 import { getPostData, getPostsFiles } from "../../lib/posts-util";
 
 export default function PostDetailPage(props) {
-  const { post } = props;
   return (
     <>
       <Head>
-        <title>{post.title}</title>
-        <meta name="description" content={post.excerpt} />
+        <title>{props.post.title}</title>
+        <meta name="description" content={props.post.excerpt} />
       </Head>
       <PostContent post={props.post} />
     </>
   );
 }
 
-export function getStaticProps(context) {
+export async function getStaticProps(context) {
   const { params } = context;
   const { slug } = params;
 
@@ -26,11 +25,10 @@ export function getStaticProps(context) {
     props: {
       post: postData,
     },
-    revalidate: 600,
   };
 }
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   const postFilesnames = getPostsFiles();
 
   const slugs = postFilesnames.map((fileName) => fileName.replace(/\.md$/, ""));
