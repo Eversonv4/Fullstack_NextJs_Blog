@@ -13,6 +13,12 @@
   color: var(--color-grey-800);
 }
 
+.content img {
+  max-width: 85%;
+  max-height: 30%;
+  object-fit: cover;
+}
+
 .content .image {
   margin: var(--size-4) auto;
   width: 100%;
