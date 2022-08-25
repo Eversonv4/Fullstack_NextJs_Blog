@@ -19,6 +19,14 @@
   object-fit: cover;
 }
 
+.content pre {
+  border: 2px solid #777;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #321313;
+  color: #b7b7b7;
+}
+
 .content .image {
   margin: var(--size-4) auto;
   width: 100%;
